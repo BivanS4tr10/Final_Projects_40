@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ items?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/chat"> <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="items">
+
+  <!-- Gambar Produk -->
+  <ion-img src="assets/img/product.jpg"></ion-img>
+
+  <!-- Info Harga & Deskripsi -->
+  <div class="product-info">
+    <h2>{{ items.price }}</h2>
+    <p>{{ items.description }}</p>
+  </div>
+
+  <!-- Variations -->
+  <ion-item lines="none">
+    <ion-label>Variations</ion-label>
+    <ion-select placeholder="Pink">
+      <ion-select-option value="pink">Pink</ion-select-option>
+      <ion-select-option value="red">Red</ion-select-option>
+      <ion-select-option value="blue">Blue</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Images untuk variasi -->
+  <!-- Variasi Gambar -->
+<div class="scroll-variations">
+  <ion-row>
+    <ion-col size="auto">
+      <ion-img src="assets/img/var1.jpg" class="variation-img"></ion-img>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-img src="assets/img/var2.jpg" class="variation-img"></ion-img>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-img src="assets/img/var3.jpg" class="variation-img"></ion-img>
+    </ion-col>
+  </ion-row>
+</div>
+
+
+  <!-- Spesifikasi -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Specifications</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Material:</strong> Cotton 95%, Nylon 5%</p>
+      <p><strong>Origin:</strong> EU</p>
+      <p><strong>Size guide:</strong> <a href="#">View</a></p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Delivery -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Delivery</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Standard (5–7 days)</ion-label>
+        <ion-note slot="end">$3.00</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Express (1–3 days)</ion-label>
+        <ion-note slot="end">$12.00</ion-note>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Rating & Reviews -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Rating & Reviews</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>
+          <h3>Veronika</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam sem...</p>
+        </ion-label>
+        <ion-badge color="warning">4.5 ★</ion-badge>
+      </ion-item>
+      <ion-button expand="block" color="light">View All Reviews</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<!-- Footer Tombol -->
+<ion-footer class="footer-buttons">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <ion-icon name="heart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="dark" expand="block">Add to cart</ion-button>
+      <ion-button color="primary" expand="block">Buy now</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

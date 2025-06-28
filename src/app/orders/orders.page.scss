@@ -1,0 +1,33 @@
+.header-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header-info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.order-card {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.thumbnail-list img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  margin-right: 4px;
+}
+
+.order-info p {
+  margin: 2px 0;
+}
+
+.status {
+  font-weight: bold;
+}

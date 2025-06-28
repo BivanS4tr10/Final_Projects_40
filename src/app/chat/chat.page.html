@@ -1,0 +1,87 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/product-detail"></ion-back-button>
+    </ion-buttons>
+    <ion-avatar slot="start" class="chat-avatar">
+      <img src="assets/img/maggy_lee.png" alt="Maggy Lee"> </ion-avatar>
+    <ion-title>
+      Maggy Lee
+      <p class="subtitle">Customer Care Service</p>
+    </ion-title>
+    <ion-text slot="end" class="typing-indicator">Typing...</ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="chat-content">
+
+  <div class="message-container left-message">
+    <div class="message-bubble">
+      Hello, Amanda! Welcome to Customer Care Service. We will be happy to help you. Please, provide us more details about your issue before we can start.
+    </div>
+  </div>
+
+  <div class="message-container right-message">
+    <div class="message-bubble message-button">
+      <ion-icon name="checkmark-circle"></ion-icon> Order issues
+    </div>
+  </div>
+
+  <div class="message-container right-message">
+    <div class="message-bubble message-button">
+      <ion-icon name="checkmark-circle"></ion-icon> I didn't recieve my parcel
+    </div>
+  </div>
+
+  <ion-avatar class="user-avatar-right">
+    <img src="assets/img/user_profile.png" alt="User Profile"> </ion-avatar>
+
+  <div class="message-container right-message order-details-message">
+    <div class="message-bubble order-card">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="auto">
+          <img src="assets/img/chat_product1.jpg" class="order-product-img">
+        </ion-col>
+        <ion-col size="auto">
+          <img src="assets/img/chat_product2.jpg" class="order-product-img">
+        </ion-col>
+        <ion-col size="auto">
+          <img src="assets/img/chat_product3.jpg" class="order-product-img">
+        </ion-col>
+      </ion-row>
+      <ion-text>Order #92287157</ion-text>
+      <ion-note>Standard Delivery</ion-note>
+      <h3>Shipped</h3>
+    </div>
+  </div>
+
+  <div class="message-container left-message">
+    <div class="message-bubble">
+      Hello, Amanda! I'm Maggy, your personal assistant from Customer Care Service. Let me go through your order and check its current status. Wait a moment please.
+    </div>
+  </div>
+
+  <div class="message-container right-message reply-message">
+    <div class="message-bubble user-reply-bubble">
+      Hello, Maggy! Sure!
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="message-input-toolbar">
+    <ion-item lines="none" class="message-input-item">
+      <ion-label position="stacked">Message</ion-label>
+      <ion-input placeholder=""></ion-input>
+      <ion-buttons slot="end">
+        <ion-button fill="clear">
+          <ion-icon name="image-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear">
+          <ion-icon name="camera-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

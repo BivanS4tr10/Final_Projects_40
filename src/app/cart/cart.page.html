@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cart <ion-badge color="primary">{{ cartItems.length }}</ion-badge>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Shipping Address -->
+  <ion-card class="address-card">
+    <ion-card-content>
+      <div class="address-header">
+        <strong>Shipping Address</strong>
+        <ion-button fill="clear" size="small" slot="end">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+      </div>
+      <p>26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Cart Items -->
+  <ng-container *ngFor="let item of cartItems">
+    <ion-card class="cart-item-card">
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img [src]="item.image" />
+        </ion-thumbnail>
+
+        <ion-label>
+          <p class="item-name">{{ item.name }}</p>
+          <p class="item-desc">{{ item.color }}, Size {{ item.size }}</p>
+          <p class="item-price">${{ item.price }}</p>
+        </ion-label>
+
+        <div class="qty-controls">
+          <ion-button fill="clear" size="small" (click)="decreaseQty(item)">
+            <ion-icon name="remove-outline"></ion-icon>
+          </ion-button>
+          <span>{{ item.qty }}</span>
+          <ion-button fill="clear" size="small" (click)="increaseQty(item)">
+            <ion-icon name="add-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-item>
+    </ion-card>
+  </ng-container>
+
+</ion-content>
+
+<!-- Footer Total & Checkout -->
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <div class="footer-total">
+      <strong>Total</strong>
+      <span>${{ getTotal() }}</span>
+    </div>
+    <ion-button expand="block" color="primary" (click)="checkout()">Checkout</ion-button>
+  </ion-toolbar>
+</ion-footer>

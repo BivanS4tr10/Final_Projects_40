@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>All Categories</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-segment [(ngModel)]="gender">
+    <ion-segment-button value="all">All</ion-segment-button>
+    <ion-segment-button value="female">Female</ion-segment-button>
+    <ion-segment-button value="male">Male</ion-segment-button>
+  </ion-segment>
+
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let cat of filteredCategories">
+      <ion-item slot="header">
+        <ion-icon [name]="cat.icon" slot="start"></ion-icon>
+        <ion-label>{{ cat.name }}</ion-label>
+      </ion-item>
+      <div slot="content">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6" *ngFor="let item of cat.subcategories">
+              <ion-button expand="block" fill="outline" size="small" (click)="selectSubcategory(item)">{{ item }}</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <div *ngIf="filteredProducts.length > 0">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let product of filteredProducts">
+          <ion-card>
+            <img [src]="product.image" />
+            <ion-card-content>
+              <p>{{ product.title }}</p>
+              <strong>${{ product.price }}</strong>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

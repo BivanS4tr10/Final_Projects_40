@@ -1,0 +1,36 @@
+<ion-content class="ion-padding create-account-page">
+  <div class="background-shapes"></div>
+
+  <h1 class="title">Create<br />Account</h1>
+
+  <div class="profile-pic-upload">
+    <ion-icon name="camera-outline"></ion-icon>
+  </div>
+
+  <ion-input class="input-field" placeholder="Email" type="email" [(ngModel)]="email" (ionInput)="updateNameFromEmail()"></ion-input>
+
+  <ion-input class="input-field" placeholder="Password" type="password" [(ngModel)]="password">
+    <ion-icon name="eye-off-outline" slot="end"></ion-icon>
+  </ion-input>
+
+  <div class="phone-input">
+    <img src="assets/imgs/flag-en.png" class="flag-icon" alt="Flag" />
+    <ion-select interface="popover" class="country-code">
+      <ion-select-option value="+62">🇮🇩 +62</ion-select-option>
+      <ion-select-option value="+1">🇺🇸 +1</ion-select-option>
+    </ion-select>
+    <ion-input placeholder="Your number" type="tel" class="phone-number" [(ngModel)]="phone"></ion-input>
+  </div>
+
+  <ion-button expand="block" class="done-button" (click)="createAccount()">Masuk</ion-button>
+  <p *ngIf="errorMsg" style="color:red">{{ errorMsg }}</p>
+
+  <ion-item>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+  </ion-item>
+
+  <ion-router-link routerLink="/login" class="footer">
+    <span>Sudah Punya Akun?</span>
+    <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+  </ion-router-link>
+</ion-content>

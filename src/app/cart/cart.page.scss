@@ -1,0 +1,47 @@
+.address-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-card {
+  border-radius: 12px;
+}
+
+.cart-item-card {
+  border-radius: 12px;
+}
+
+.item-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.item-desc {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 4px;
+}
+
+.item-price {
+  font-weight: bold;
+  color: #000;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 8px;
+}
+
+.footer-toolbar {
+  padding: 12px;
+  background: #fff;
+}
+
+.footer-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}

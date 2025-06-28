@@ -1,0 +1,169 @@
+ion-header {
+  ion-toolbar {
+    --background: #fff; // Atur warna latar belakang header
+    padding-inline-end: 16px; // Tambahkan padding ke kanan untuk Typing...
+
+    ion-title {
+      padding-inline-start: 10px; // Sesuaikan padding judul jika perlu
+      .subtitle {
+        font-size: 0.8em;
+        color: var(--ion-color-medium);
+        margin-top: 2px;
+      }
+    }
+
+    .chat-avatar {
+      width: 40px;
+      height: 40px;
+      margin-inline-start: 8px; // Sesuaikan margin avatar
+    }
+
+    .typing-indicator {
+      font-size: 0.9em;
+      color: var(--ion-color-primary); // Warna biru untuk typing
+      font-weight: bold;
+    }
+  }
+}
+
+ion-content.chat-content {
+  --background: #f0f2f5; // Warna latar belakang chat
+  padding: 10px;
+
+  .message-container {
+    display: flex;
+    margin-bottom: 10px;
+
+    &.left-message {
+      justify-content: flex-start;
+    }
+
+    &.right-message {
+      justify-content: flex-end;
+    }
+
+    .message-bubble {
+      max-width: 75%;
+      padding: 10px 15px;
+      border-radius: 20px;
+      line-height: 1.4;
+      font-size: 0.95em;
+    }
+  }
+
+  // Gaya untuk bubble pesan dari Maggy (kiri)
+  .left-message .message-bubble {
+    background: #e0e0e0; // Warna abu-abu terang
+    color: #333;
+    border-bottom-left-radius: 5px; // Bentuk gelembung seperti di screenshot
+  }
+
+  // Gaya untuk bubble pesan dari pengguna (kanan)
+  .right-message .message-bubble {
+    background: var(--ion-color-primary); // Warna biru utama Ionic
+    color: #fff;
+    border-bottom-right-radius: 5px; // Bentuk gelembung seperti di screenshot
+  }
+
+  .message-button {
+    background: var(--ion-color-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    padding: 8px 12px; // Sedikit lebih kecil dari pesan biasa
+    border-radius: 25px; // Lebih membulat
+    margin-bottom: 8px; // Jarak antar tombol
+  }
+
+  .user-avatar-right {
+    width: 30px;
+    height: 30px;
+    align-self: flex-end;
+    margin-top: -10px; // Sedikit menimpa bubble di atasnya
+    margin-bottom: 10px; // Jarak ke bawah
+    margin-inline-end: 10px; // Sesuaikan posisi horizontal
+  }
+
+  .order-details-message {
+    .order-card {
+      background: #fff;
+      color: #333;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: block; // Pastikan mengisi lebar
+      max-width: 75%; // Sesuaikan lebar
+      text-align: start; // Teks rata kiri di dalam card
+
+      ion-row {
+        margin-bottom: 10px;
+        justify-content: flex-start; // Gambar rata kiri
+      }
+      .order-product-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-inline-end: 5px; // Jarak antar gambar
+      }
+      ion-text {
+        font-weight: bold;
+        display: block; // Agar text berada di baris baru
+        margin-bottom: 5px;
+      }
+      ion-note {
+        font-size: 0.85em;
+        color: var(--ion-color-medium);
+        display: block;
+        margin-bottom: 5px;
+      }
+      h3 {
+        margin: 0;
+        color: var(--ion-color-success); // Warna hijau untuk "Shipped"
+        font-weight: bold;
+      }
+    }
+  }
+
+  .user-reply-bubble {
+    background: #e0f2f7; // Warna biru muda untuk balasan pengguna
+    color: #333;
+    border-bottom-right-radius: 5px; // Bentuk gelembung seperti di screenshot
+    margin-inline-end: 5px; // Jarak dari avatar pengguna
+  }
+}
+
+ion-footer {
+  ion-toolbar.message-input-toolbar {
+    --background: #fff;
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+
+    .message-input-item {
+      --background: #f0f2f5; // Latar belakang input
+      border-radius: 25px;
+      padding-inline-start: 15px;
+      padding-inline-end: 10px; // Untuk ikon
+
+      ion-label {
+        display: none; // Sembunyikan label "Message"
+      }
+      ion-input {
+        --padding-start: 0px; // Hilangkan padding default input
+      }
+      ion-buttons {
+        margin-inline-end: 0;
+        ion-button {
+          --padding-start: 5px;
+          --padding-end: 5px;
+          ion-icon {
+            font-size: 1.4em;
+            color: var(--ion-color-medium);
+          }
+        }
+      }
+    }
+  }
+}

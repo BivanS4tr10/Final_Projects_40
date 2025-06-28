@@ -1,0 +1,22 @@
+<ion-content class="login-page">
+  <div class="background-shapes"></div>
+
+  <div class="container">
+    <h1 class="title">Login</h1>
+    <p class="subtitle">Selamat datang Kembali!<ion-icon name="heart" color="dark"></ion-icon></p>
+
+    <ion-input
+      [(ngModel)]="email"
+      class="input-field"
+      placeholder="Email"
+      type="email"
+      fill="solid">
+    </ion-input>
+
+    <ion-button expand="block" class="next-button" (click)="login()">Next</ion-button>
+
+    <ion-button fill="clear" class="cancel-button" (click)="cancel()">Cancel</ion-button>
+    <p *ngIf="errorMsg" style="color: red;">{{ errorMsg }}</p>
+    
+  </div>
+</ion-content>

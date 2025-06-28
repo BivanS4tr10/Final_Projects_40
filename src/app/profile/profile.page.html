@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Activity</ion-title>
+    <ion-buttons slot="start">
+      <ion-avatar>
+        <img src="assets/avatar.png" alt="Profile" />
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h2>Hello, Romina!</h2>
+
+  <!-- Announcement Box -->
+  <ion-card class="announcement-box">
+    <ion-card-header>
+      <ion-card-title>Announcement</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      <ion-icon name="arrow-forward-circle" slot="end"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Recently Viewed -->
+  <h3>Recently viewed</h3>
+  <ion-row>
+    <ion-col size="2" *ngFor="let item of recentlyViewed">
+      <ion-avatar>
+        <img [src]="item" />
+      </ion-avatar>
+    </ion-col>
+  </ion-row>
+
+  <!-- My Orders -->
+  <h3>My Orders</h3>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" color="primary">To Pay</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" color="tertiary">To Receive</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" color="secondary">To Review</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
+<!-- Bottom Tab Bar -->
+<ion-footer>
+  <ion-toolbar>
+    <div class="bottom-nav">
+      <ion-icon name="home" size="large"></ion-icon>
+      <ion-icon name="heart-outline" size="large"></ion-icon>
+      <ion-icon name="chatbubble-ellipses-outline" size="large"></ion-icon>
+      <ion-icon name="person-outline" size="large"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

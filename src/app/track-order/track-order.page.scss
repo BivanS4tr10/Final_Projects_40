@@ -1,0 +1,48 @@
+.tracking-number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.tracking-steps {
+  padding-top: 1rem;
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+
+    .circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1rem;
+      font-size: 18px;
+    }
+
+    .content h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .content small {
+      color: gray;
+    }
+  }
+
+  .step.active .circle {
+    background-color: var(--ion-color-primary);
+    color: white;
+  }
+
+  .step.failed .circle {
+    background-color: var(--ion-color-danger);
+    color: white;
+  }
+}

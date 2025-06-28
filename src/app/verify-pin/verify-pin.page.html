@@ -1,0 +1,33 @@
+<ion-content class="verify-pin-page">
+  <div class="background"></div>
+
+  <div class="container">
+    <img src="assets/avatar.png" class="avatar" alt="User Avatar" />
+    
+    <h2>Halo, Romina!!</h2>
+    <p>Masukkan Password Anda</p>
+
+    <ion-item class="pin-input">
+      <ion-input
+        [(ngModel)]="password"
+        type="password"
+        placeholder="••••"
+        inputmode="numeric"
+        maxlength="6"
+        clearInput="true">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="ion-margin-top" (click)="verifikasi()">Verifikasi</ion-button>
+
+    <div class="footer" (click)="notYou()">
+      <span>Not you?</span>
+      <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+    </div>
+    <div class="footer" (click)="lupaPassword()">
+      <span>lupa password?</span>
+      <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+    </div>
+  </div>
+  <p *ngIf="errorMsg" style="color: red;">{{ errorMsg }}</p>
+</ion-content>

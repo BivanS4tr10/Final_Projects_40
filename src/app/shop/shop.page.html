@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Shop</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="camera-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search">
+      <ion-buttons slot="end">
+        <ion-button (click)="goToCategoryFilter()">
+          <ion-icon name="funnel-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Carousel -->
+  <div class="horizontal-scroll">
+    <div class="card-item" *ngFor="let item of items">
+      <img [src]="item.image" />
+      <div class="card-info" (click)="goToProductDetail(items)">
+        <h2 class="item-name">{{ item.name }}</h2>
+        <p class="item-price">\${{ item.price }}</p> 
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" *ngFor="let cat of categories">
+        <ion-card class="category-card">
+          <img [src]="cat.image" />
+          <ion-card-content>
+            <h3>{{ cat.name }}</h3>
+            <p>{{ cat.count }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Top Products -->
+  <h2>Top Products</h2>
+  <div class="top-products-scroll">
+    <div class="top-product-avatar" *ngFor="let item of topProducts">
+      <img [src]="item.image" />
+    </div>
+  </div>
+
+  <!-- New Items -->
+  <div class="section-header">
+    <h2>New Items</h2>
+    <ion-button fill="clear" size="small">
+      See All
+      <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="horizontal-cards">
+    <div class="new-item-card" *ngFor="let item of newItems">
+      <img [src]="item.image" />
+      <div class="card-content">
+        <p>{{ item.name }}</p>
+        <h3>\${{ item.price }}</h3>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="ion-justify-content-around ion-align-items-center">
+        <ion-col size="auto" class="ion-text-center">
+          <ion-button fill="clear" (click)="goToShop()">
+            <ion-icon name="home-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto" class="ion-text-center">
+          <ion-button fill="clear" (click)="goToOrders()">
+            <ion-icon name="list-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto" class="ion-text-center">
+          <ion-button fill="clear" (click)="goToCart()">
+            <ion-icon name="bag-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto" class="ion-text-center">
+          <ion-button fill="clear" (click)="goToProfile()">
+            <ion-icon name="person-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

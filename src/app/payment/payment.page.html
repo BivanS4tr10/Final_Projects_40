@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Shipping Address -->
+  <ion-card>
+    <ion-card-content>
+      <div class="section-header">
+        <strong>Shipping Address</strong>
+        <ion-button fill="clear" size="small">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+      </div>
+      <p>26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Contact Info -->
+  <!-- Contact Info -->
+<ion-card>
+  <ion-card-content>
+    <div class="section-header">
+      <strong>Contact Information</strong>
+      <ion-button fill="clear" size="small">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <p>{{ contact.phone }}</p>
+    <p>{{ contact.email }}</p>
+  </ion-card-content>
+</ion-card>
+
+
+  <!-- Items -->
+  <ion-card>
+    <ion-card-content>
+      <div class="section-header">
+        <strong>Items</strong>
+        <ion-badge color="primary">{{ cartItems.length }}</ion-badge>
+        <ion-button fill="clear" size="small" class="voucher-btn">Add Voucher</ion-button>
+      </div>
+
+      <div *ngFor="let item of cartItems" class="item-row">
+        <img [src]="item.image" class="item-img" />
+        <div class="item-info">
+          <p>{{ item.name }}</p>
+          <p>${{ item.price }}</p>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Shipping Options -->
+  <ion-card>
+    <ion-card-content>
+      <strong>Shipping Options</strong>
+
+      <ion-item lines="none">
+        <ion-radio-group [(ngModel)]="selectedShipping">
+          <ion-item lines="none">
+            <ion-radio value="standard" slot="start"></ion-radio>
+            <ion-label>Standard <span class="option-desc">5–7 days</span></ion-label>
+            <ion-badge slot="end" color="success">FREE</ion-badge>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-radio value="express" slot="start"></ion-radio>
+            <ion-label>Express <span class="option-desc">1–2 days</span></ion-label>
+            <ion-badge slot="end" color="medium">$12.00</ion-badge>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+
+      <p class="delivery-date">Delivered on or before Thursday, 23 April 2020</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Payment Method -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Payment Methods</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-radio-group [(ngModel)]="selectedCard">
+        <ion-item *ngFor="let card of cards">
+          <ion-label>{{ card.masked }} - {{ card.name }}</ion-label>
+          <ion-radio slot="start" [value]="card"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Payment Summary -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Summary</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Subtotal</ion-label>
+        <ion-note slot="end">${{ subtotal }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Shipping</ion-label>
+        <ion-note slot="end">${{ shippingCost }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Total</strong></ion-label>
+        <ion-note slot="end"><strong>${{ total }}</strong></ion-note>
+      </ion-item>
+      <ion-button expand="block" (click)="processPayment()">Pay</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<!-- Footer -->
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <div class="footer-total">
+      <strong>Total</strong>
+      <span>${{ getTotal() }}</span>
+    </div>
+    <ion-button expand="block" color="dark" (click)="processPayment()">Pay</ion-button>
+  </ion-toolbar>
+</ion-footer>

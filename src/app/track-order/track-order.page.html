@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/orders"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Track Your Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tracking Number</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="tracking-number">
+      <span>LGS-8927893300763731</span>
+      <ion-icon name="copy-outline" color="medium"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="tracking-steps">
+    <div class="step active">
+      <div class="circle">
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+      </div>
+      <div class="content">
+        <h3>Packed</h3>
+        <p>Your parcel is packed and will be handed over.</p>
+        <small>Apr 19, 12:31</small>
+      </div>
+    </div>
+
+    <div class="step active">
+      <div class="circle">
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+      </div>
+      <div class="content">
+        <h3>Shipped</h3>
+        <p>Out from logistic facility.</p>
+        <small>Apr 20, 06:55</small>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="circle">
+        <ion-icon name="time-outline"></ion-icon>
+      </div>
+      <div class="content">
+        <h3>Out for Delivery</h3>
+        <p>Courier is delivering.</p>
+        <small>Apr 22, 11:10</small>
+      </div>
+    </div>
+
+    <div class="step failed">
+      <div class="circle">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </div>
+      <div class="content">
+        <h3>Attempt Failed</h3>
+        <p>Delivery was unsuccessful.</p>
+        <small>Apr 22, 12:50</small>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
